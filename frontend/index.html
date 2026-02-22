@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDIMF | System Mirror 0x01</title>
+    <meta name="description" content="Cognitive Deception System Mirror.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- DESKTOP AREA -->
+    <div class="desktop-area" id="main-desktop-grid" style="display: block; overflow-y: auto;">
+        <!-- Categories will be injected here: Directories vs Files -->
+    </div>
+
+    <!-- WINDOWS -->
+
+    <!-- WhatsApp Window -->
+    <div id="win-whatsapp" class="window" style="width: 500px; height: 600px; top: 100px; left: 100px;">
+        <div class="window-header">
+            <span class="window-title">WhatsApp Web - Backup Viewer</span>
+            <div class="window-controls">
+                <div class="control-btn btn-min"></div>
+                <div class="control-btn btn-max"></div>
+                <div class="control-btn btn-close" onclick="os.closeWindow('whatsapp')"></div>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <img src="https://ui-avatars.com/api/?name=Boss&background=random"
+                        style="width: 40px; border-radius: 50%;">
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.9rem;">Boss (Work)</div>
+                        <div style="font-size: 0.7rem; color: var(--accent-success);">Online</div>
+                    </div>
+                </div>
+                <div class="chat-messages">
+                    <div class="message msg-received">Hey, did you backup the Q4 strategy folder?</div>
+                    <div class="message msg-sent">Yes, it's in the Proprietery folder on the desktop.</div>
+                    <div class="message msg-received">Check the API keys for the production server too.</div>
+                    <div class="message msg-sent">Sending the backup zip now...</div>
+                </div>
+                <div style="padding: 15px; border-top: 1px solid var(--glass-border); display: flex; gap: 10px;">
+                    <div
+                        style="flex: 1; height: 35px; background: rgba(255,255,255,0.05); border-radius: 17px; padding: 0 15px; display: flex; align-items: center; color: var(--text-dim); font-size: 0.8rem;">
+                        Type a message...</div>
+                    <button style="border: none; background: #075e54; color: white; width: 35px; border-radius: 50%;"><i
+                            class="fas fa-paper-plane" style="font-size: 0.8rem;"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Vault Window -->
+    <div id="win-vault" class="window" style="width: 600px; height: 400px; top: 150px; left: 400px;">
+        <div class="window-header">
+            <span class="window-title">AWS & Stripe API Dashboard</span>
+            <div class="window-controls">
+                <div class="control-btn btn-min"></div>
+                <div class="control-btn btn-max"></div>
+                <div class="control-btn btn-close" onclick="os.closeWindow('vault')"></div>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="item-list">
+                <div class="list-item" onclick="cdimf.intercept('AWS_PROD_KEY')">
+                    <i class="fab fa-aws" style="color: #FF9900; font-size: 1.5rem;"></i>
+                    <div>
+                        <div style="font-weight: 600;">AWS_PRODUCTION_ACCESS_KEY</div>
+                        <div style="font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--text-dim);">
+                            AKIAT...H6J2 (Revealed)</div>
+                    </div>
+                    <button class="copy-btn">COPY SECRET</button>
+                </div>
+                <div class="list-item" onclick="cdimf.intercept('STRIPE_SECRET')">
+                    <i class="fab fa-stripe" style="color: #635bff; font-size: 1.5rem;"></i>
+                    <div>
+                        <div style="font-weight: 600;">STRIPE_LIVE_SECRET_KEY</div>
+                        <div style="font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--text-dim);">
+                            sk_live_...99s2 (Active)</div>
+                    </div>
+                    <button class="copy-btn">COPY SECRET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Neural Core Training Log Window -->
+    <div id="win-neural" class="window" style="width: 650px; height: 450px; top: 100px; left: 300px;">
+        <div class="window-header">
+            <span class="window-title">LSTM Neuro-Analytic Console (dl.py)</span>
+            <div class="window-controls">
+                <div class="control-btn btn-min"></div>
+                <div class="control-btn btn-max"></div>
+                <div class="control-btn btn-close" onclick="os.closeWindow('neural')"></div>
+            </div>
+        </div>
+        <div class="window-content" id="neural-logs"
+            style="background: #000; padding: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #00ff00; overflow-y: auto;">
+            <div style="color: #666;">// Initializing Deep Learning Core Integration...</div>
+            <div style="color: #666;">// Linked to: ../training/dl.py</div>
+            <div id="dl-stream-output" style="margin-top: 10px;"></div>
+        </div>
+    </div>
+    <div id="win-explorer" class="window" style="width: 800px; height: 500px; top: 50px; left: 200px;">
+        <div class="window-header">
+            <span class="window-title">File Explorer - System Mirror C:</span>
+            <div class="window-controls">
+                <div class="control-btn btn-min"></div>
+                <div class="control-btn btn-max"></div>
+                <div class="control-btn btn-close" onclick="os.closeWindow('explorer')"></div>
+            </div>
+        </div>
+        <div class="toolbar"
+            style="padding: 10px; border-bottom: 1px solid var(--glass-border); display: flex; gap: 15px; align-items: center;">
+            <button onclick="explorer.goBack()"
+                style="background: none; border: none; color: white; cursor: pointer;"><i
+                    class="fas fa-arrow-left"></i></button>
+            <div id="current-path"
+                style="background: rgba(0,0,0,0.3); padding: 5px 15px; border-radius: 4px; flex: 1; font-size: 0.8rem; color: var(--text-dim); border: 1px solid var(--glass-border);">
+                This PC > Windows > Mirror
+            </div>
+        </div>
+        <div class="window-content" id="explorer-view">
+            <!-- Dynamic Files Loaded from structure.json -->
+        </div>
+    </div>
+    <!-- VOLATILE API BAIT STREAM (Time-based rotation) -->
+    <div id="api-bait-stream"
+        style="position: absolute; left: 30px; bottom: 85px; width: 320px; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(20px); border: 1px solid var(--accent-secondary); border-radius: 12px; padding: 15px; z-index: 1000; box-shadow: 0 0 30px rgba(112, 0, 255, 0.2);">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(112, 0, 255, 0.3); padding-bottom: 8px;">
+            <span
+                style="font-size: 0.75rem; font-weight: 800; color: var(--accent-secondary); letter-spacing: 1px;">VOLATILE
+                API STREAM</span>
+            <div class="pulser"
+                style="width: 8px; height: 8px; background: var(--accent-secondary); border-radius: 50%; box-shadow: 0 0 10px var(--accent-secondary);">
+            </div>
+        </div>
+        <div id="active-api-keys" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Dynmaically rotating keys -->
+        </div>
+        <div
+            style="margin-top: 12px; font-size: 0.65rem; color: var(--text-dim); text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;">
+            BAIT REFRESH CYCLE: <span id="api-timer"
+                style="color: var(--accent-secondary); font-weight: 700;">30s</span>
+        </div>
+    </div>
+
+    <!-- CDIMF HUD (The Hidden Layer) -->
+    <div class="cdimf-hud">
+        <div class="hud-header">
+            <div class="hud-title">CDIMF ENGINE V.1.0</div>
+            <div class="hud-status">● DECEPTION ACTIVE | THREAT LEVEL: MONITORING</div>
+        </div>
+
+        <div class="hud-log" id="engine-logs">
+            <!-- Interception logs will appear here -->
+        </div>
+
+        <div id="interrogation-zone" style="display: none;">
+            <div class="hud-interrogation-card">
+                <div style="font-weight: 800; color: var(--accent-danger); font-size: 0.8rem; margin-bottom: 8px;">
+                    [INTRUSION DETECTED]</div>
+                <div style="font-size: 0.7rem; color: #fff;">
+                    An unauthorized process attempted to extract <span id="target-name"
+                        style="color: var(--accent-warn);">SECRET_DATA</span>.
+                    Redirection in progress...
+                </div>
+                <div id="ai-prediction"
+                    style="margin-top: 10px; font-family: 'JetBrains Mono'; color: var(--accent-primary); font-size: 0.65rem;">
+                    PREDICTING INTENT: DATA_EXFILTRATION (94%)
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: NEURAL TRAINING MODULE -->
+        <div style="margin-top: auto; padding-top: 15px; border-top: 1px dashed rgba(0, 242, 255, 0.2);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 0.7rem; font-weight: 800; color: var(--accent-secondary);">LSTM NEURAL
+                    CORE</span>
+                <span id="training-status" style="font-size: 0.6rem; color: var(--accent-success);">IDLE</span>
+            </div>
+            <div id="training-progress-container" style="display: none; margin-bottom: 10px;">
+                <div
+                    style="width: 100%; height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden;">
+                    <div id="training-progress-bar"
+                        style="width: 0%; height: 100%; background: var(--accent-secondary); transition: width 0.3s;">
+                    </div>
+                </div>
+                <div id="training-epochs"
+                    style="font-family: 'JetBrains Mono'; font-size: 0.55rem; color: var(--text-dim); margin-top: 4px; text-align: right;">
+                    EPOCH: 0/10</div>
+            </div>
+            <button onclick="neural.startTraining()"
+                style="width: 100%; padding: 8px; background: rgba(112, 0, 255, 0.1); border: 1px solid var(--accent-secondary); border-radius: 6px; color: var(--accent-secondary); font-size: 0.7rem; font-weight: 800; cursor: pointer; transition: all 0.2s;">
+                RE-TRAIN COGNITIVE MODEL
+            </button>
+        </div>
+    </div>
+
+    <!-- TASKBAR -->
+    <div class="taskbar">
+        <div class="start-btn">
+            <i class="fas fa-shield-alt" style="color: white; font-size: 1.2rem;"></i>
+        </div>
+        <div
+            style="margin-left: auto; display: flex; align-items: center; gap: 15px; color: var(--text-dim); font-size: 0.75rem; font-weight: 600;">
+            <span><i class="fas fa-wifi"></i> SECURE_OS</span>
+            <span id="system-clock">12:34 PM</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
